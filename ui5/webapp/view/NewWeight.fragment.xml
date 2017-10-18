@@ -1,0 +1,44 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		id="NewWeightDialog"
+		title="New Weight">
+		<FlexBox
+			alignItems="Start"
+			justifyContent="Center">
+			<items>
+				<VBox id="NewWeightVBox" class="sapUiSmallMargin">
+					<f:SimpleForm id="NewWeightForm"
+						editable="true"
+						layout="ResponsiveGridLayout"
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="4"
+						emptySpanL="4"
+						emptySpanM="4"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" >
+						<f:content>
+							<Label text="Weight" />
+							<Input type="Number" value="{NewWeight>/MEASURE_WEIGHT}"/>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+			</items>
+		</FlexBox>
+		<beginButton>
+			<Button id="NWSubmit" text="Add" type="Emphasized" press="doNewWeightSubmitPress"/>
+		</beginButton>
+		<endButton>
+			<Button id="NWClose" text="Close" type="Default" press="doNewWeightClosePress"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,48 @@
+<mvc:View 
+	controllerName="ui5.neho.healthtrack.controller.Home"
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc">
+	
+	<GenericTile 
+		class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+		header="Blood Pressure" 
+		subheader="{bp>/bp/MEASURE_SISTOLIC} by {bp>/bp/MEASURE_DIASTOLIC}" 
+		press="bp_press">
+		<tileContent>
+			<TileContent unit="" footer="mmHg">
+				<content>
+					<NumericContent value="{bp>/bp/MEASURE_STATUS}" valueColor="Error"/>
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+
+	<GenericTile 
+		class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+		header="Exercises" 
+		subheader="{exercise>/exercise/MEASURE_EXERCISE_TYPE_TEXT}" 
+		press="exercise_press">
+		<tileContent>
+			<TileContent unit="KCAL">
+				<content>
+					<NumericContent value="{exercise>/exercise/MEASURE_CALORIES_BURNED}" valueColor="Good"/>
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+
+	<GenericTile 
+		class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+		header="Weight" 
+		subheader="Measured {weight>/weight/MEASURE_DATE}" 
+		press="weight_press">
+		<tileContent>
+			<TileContent unit="KG">
+				<content>
+					<NumericContent value="{weight>/weight/MEASURE_WEIGHT}" valueColor="Neutral"/>
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+
+</mvc:View>
